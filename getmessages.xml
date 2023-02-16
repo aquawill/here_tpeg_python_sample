@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<get-messages>
+	<locations>
+		<loc lat="25.03275" lon="121.57116"/>
+		<loc lat="25.00444" lon="121.57982"/>
+		<loc lat="25.00829" lon="121.64708"/>
+	</locations>
+</get-messages>
