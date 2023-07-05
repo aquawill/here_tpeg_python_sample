@@ -3,11 +3,12 @@
 	<tpeg format="TPEGBinary" messagesize="50000" sessionsize="1000">
 		<loc-ref id="TMC" version="1.3"/>
 		<loc-ref id="ETL" version="1.0"/>
+		<loc-ref id="OLR" version="1.0"/>
 		<app id="TEC" version="3.2"/>
 		<app id="TFP" version="1.0" expiration="17"/>
 	</tpeg>
 	<configuration>
-		<att name="radius" value="5"/>
+		<att name="radius" value="20000"/>
 		<att name="expiration" value="600"/>
 		<att name="timeout" value="300"/>
 		<att name="frequency" value="180"/>

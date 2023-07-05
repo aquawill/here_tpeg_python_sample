@@ -1,17 +1,27 @@
-import requests
-import xml.etree.cElementTree as xml
 import gzip
-import struct
-import sys
-import binascii
-import os
-from Crypto.Cipher import AES as aes
-from Crypto import Random
 import time
+import xml.etree.cElementTree as xml
 
+import requests
+from Crypto import Random
+from Crypto.Cipher import AES as aes
+
+api_key = ''
 app_id = ''
 app_code = ''
-api_key = ''
+
+try:
+    app_id
+except NameError:
+    app_id = ''
+try:
+    app_code
+except NameError:
+    app_code = ''
+try:
+    api_key
+except NameError:
+    api_key = ''
 
 sample_init_body = open('initsession.xml', 'r').read().replace('\t', '').replace('\n', '')
 print('sample_init_body:', sample_init_body)
@@ -133,8 +143,8 @@ def main():
     init_resp_xml = xml.fromstring(init_resp)
     req_url = init_resp_xml.get('url')
     key = init_resp_xml.get('key')  # Key, key never changes in the session.
-    # crypto(key, sample_req_body)
-    get_msg_request(req_url, key, sample_getmessage_body)
+    get_msg_response = get_msg_request(req_url, key, sample_getmessage_body)
+    # crypto(key, get_msg_response)
 
 
 if __name__ == '__main__':
